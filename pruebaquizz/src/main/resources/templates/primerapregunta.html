@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PrimeraPregunta</title>
+</head>
+<body>
+    <form th:action="@{/pregunta1}" th:object="${primerapregunta}" method="post">
+        <input type="hidden" name="genero"  value="ninguno">
+        <input type="hidden" name="aficion" value="Programar">
+        <input type="text" th:field="*{nombre}" placeholder="nombre" >
+        <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red;"></span>
+        <input type="text" th:field="*{apellido}"  placeholder="apellido">
+        <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" style="color:red;"></span>
+        <input type="text" th:field="*{edad}"  placeholder="edad">
+        <span th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}" style="color:red"></span>
+        <input type="submit">
+    </form>
+
+
+</body>
+</html>

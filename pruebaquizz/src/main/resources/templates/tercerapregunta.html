@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TerceraPregunta</title>
+</head>
+<body>
+
+<h1>Indica tus Aficiones</h1>
+<form th:action="@{/pregunta3}" th:object="${primerapregunta}" method="post">
+    <input type="hidden" th:field="*{nombre}">
+    <input type="hidden" th:field="*{apellido}">
+    <input type="hidden" th:field="*{edad}">
+    <input type="hidden" th:field="*{genero}">
+    <select th:field="*{aficion}" multiple>
+            <option value="gym">Gimnasio</option>
+        <option value="futbol">Futbol</option>
+        <option value="ciclismo">Ciclismo</option>
+        <option value="videojuegos">Videojuegos</option>
+    </select>
+    <span th:if="${#fields.hasErrors('aficion')}" th:errors="*{aficion}"style="color:red"></span>
+    <input type="submit">
+</form>
+
+
+<a th:href="@{/volver/pregunta2(
+    nombre=${primerapregunta.nombre},
+    apellido=${primerapregunta.apellido},
+    edad=${primerapregunta.edad},
+    genero=${primerapregunta.genero}
+)}">
+    Volver a la pregunta 2
+</a>
+
+
+
+</body>
+</html>

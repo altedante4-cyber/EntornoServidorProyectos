@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultado</title>
+</head>
+<body>
+
+
+<ol th:each="elem : ${pre}">
+    <li th:text="${elem.nombre}"></li>
+    <li th:text="${elem.apellido}"></li>
+    <li th:text="${elem.edad}"></li>
+    <li th:text="${elem.genero}"></li>
+    <h5>AFICIONES</h5>
+    <ol th:each="per: ${elem.aficion}" >
+        <li th:text="${per}"></li>
+    </ol>
+</ol>
+<a th:href="@{/volver/pregunta3(
+    nombre=${primerapregunta.nombre},
+    apellido=${primerapregunta.apellido},
+    edad=${primerapregunta.edad},
+    genero=${primerapregunta.genero},
+    aficion=${primerapregunta.aficion}
+)}">
+    Volver a la pregunta3
+</a>
+
+</body>
+</html>

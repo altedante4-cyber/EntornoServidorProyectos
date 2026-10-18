@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SegundaPregunta </title>
+</head>
+<body>
+<h1>Indica tu Genero</h1>
+<form th:action="@{/pregunta2}" th:object="${primerapregunta}" method="post">
+    <input type="hidden" th:field="*{nombre}">
+    <input type="hidden" th:field="*{apellido}">
+    <input type="hidden" th:field="*{edad}">
+    <input type="hidden" name="aficion" value="Programar">
+    <label>Masculino</label>
+    <input type="radio" th:field="*{genero}"  value="masculino">
+    <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}" style="color:red"></span>
+    <label>Femenino</label>
+    <input type="radio" th:field="*{genero}" value="femenino">
+    <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}" style="color:red"></span>
+    <input type="submit">
+</form>
+
+<a th:href="@{/volver/pregunta1(
+    nombre=${primerapregunta.nombre},
+    apellido=${primerapregunta.apellido},
+    edad=${primerapregunta.edad}
+)}">
+    Volver a la primera pregunta
+</a>
+</body>
+</html>
