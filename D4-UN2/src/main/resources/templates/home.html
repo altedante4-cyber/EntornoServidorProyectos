@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}">Aplicación con i18n</title>
+
+</head>
+<body>
+<div class="box">
+    <h1 th:text="#{home.titulo}">Aplicación mínima con i18n</h1>
+    <h2 th:text="#{home.bienvenido}">Bienvenido a la aplicación</h2>
+    <p th:text="#{home.mensaje}">Los mensajes cambian según el idioma.</p>
+    <p><strong th:text="#{home.idioma}">Selecciona idioma: en la url tienes que agregar el parametro en , es o br junto a ?lang= ej: ?lang=en  para el br no tengo archivo </strong></p>
+</div>
+<p><a href="/formulario">Ir  a las pruebas de codificación</a></p>
+</body>
+</html>

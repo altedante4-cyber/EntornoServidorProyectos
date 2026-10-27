@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}">Codificación e i18n</title>
+
+</head>
+<body>
+<h1 >Codificación e i18n</h1>
+
+<form action="/resultado-get" method="get">
+    <label >Escribe un texto:</label>
+    <input type="text" name="texto"  >
+    <button type="submit" >Enviar </button>
+</form>
+
+<p><a href="/enlace" >Codificar y enviar por enlace (GET con URLEncoder)</a></p>
+
+<p><a href="/">Ir a la aplicación i18n</a></p>
+</body>
+</html>
