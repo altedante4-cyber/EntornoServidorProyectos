@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultado del quizz</title>
+    <style th:replace="~{fragmentos :: estilos}"></style>
+</head>
+<body>
+<main>
+    <p class="version" th:text="${version}">Versión</p>
+    <h1>Resultado del quizz</h1>
+
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td th:text="${datos['nombre']}">Nombre</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td th:text="${datos['apellido']}">Apellido</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td th:text="${datos['edad']}">Edad</td>
+        </tr>
+        <tr>
+            <td>Género</td>
+            <td th:text="${generoTexto}">Género</td>
+        </tr>
+        <tr>
+            <td>Aficiones</td>
+            <td>
+                <ul>
+                    <li th:each="aficion : ${datos['aficiones']}" th:text="${aficion}">Afición</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="acciones">
+        <a class="boton" th:href="${base + '/reiniciar'}">Volver a empezar</a>
+        <a th:href="@{/}">Volver al inicio</a>
+    </div>
+</main>
+</body>
+</html>

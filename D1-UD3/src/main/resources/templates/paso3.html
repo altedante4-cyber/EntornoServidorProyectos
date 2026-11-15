@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paso 3 · Aficiones</title>
+    <style th:replace="~{fragmentos :: estilos}"></style>
+</head>
+<body>
+<main>
+    <p class="version" th:text="${version}">Versión</p>
+    <h1>Paso 3 · Aficiones</h1>
+
+
+    <form method="post" th:action="${accion3}">
+        <div class="opciones">
+            <label th:each="aficion : ${aficiones}">
+                <input type="checkbox" name="aficiones" th:value="${aficion}"
+                       th:checked="${#lists.contains(datos['aficiones'], aficion)}">
+                <span th:text="${aficion}">Afición</span>
+            </label>
+        </div>
+
+        <div class="error" th:if="${error != null}" th:text="${error}">Error</div>
+
+        <div class="acciones">
+            <button type="submit">Ver resultado</button>
+            <a class="boton" th:href="${base + '/paso2'}">Atrás</a>
+            <a th:href="@{/}">Volver al inicio</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

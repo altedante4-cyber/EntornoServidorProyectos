@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paso 1 · Datos personales</title>
+    <style th:replace="~{fragmentos :: estilos}"></style>
+</head>
+<body>
+<main>
+    <p class="version" th:text="${version}">Versión</p>
+    <h1>Paso 1 · Datos personales</h1>
+
+    <form method="post" th:action="${accion1}">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" th:value="${datos['nombre']}" autocomplete="off">
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" th:value="${datos['apellido']}" autocomplete="off">
+
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" th:value="${datos['edad']}" min="1" max="120">
+
+        <div class="error" th:if="${error != null}" th:text="${error}">Error</div>
+
+        <div class="acciones">
+            <button type="submit">Siguiente</button>
+            <a th:href="@{/}">Volver al inicio</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

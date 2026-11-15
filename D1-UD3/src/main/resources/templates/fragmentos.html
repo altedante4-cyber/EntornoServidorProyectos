@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<style th:fragment="estilos">
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        padding: 32px 16px 48px;
+        font-family: "DejaVu Sans", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+        color: #000000;
+        background: #ffffff;
+    }
+
+    main { max-width: 780px; margin: 0 auto; }
+
+    h1, h2, h3 { font-weight: 700; color: #000000; line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 22px; margin-top: 28px; }
+    h3 { font-size: 18px; }
+    p { margin: 0 0 14px; }
+    strong { font-weight: 700; }
+    .sub { margin-bottom: 24px; }
+
+    .card { border: 2px solid #000000; padding: 18px 20px; margin: 0 0 16px; }
+    .card h2 { margin-top: 0; }
+
+    a { color: #000000; font-weight: 700; }
+
+    label { display: block; font-weight: 700; margin: 14px 0 6px; }
+
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1.5px solid #000000;
+        background: #ffffff;
+        color: #000000;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .opciones label {
+        font-weight: 400;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 8px 0;
+    }
+
+    .opciones input { width: 18px; height: 18px; accent-color: #000000; }
+
+    .error {
+        border: 2px solid #000000;
+        padding: 12px 14px;
+        margin: 16px 0;
+        font-weight: 700;
+    }
+
+    .acciones { margin-top: 22px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+    button, .boton {
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        color: #000000;
+        background: #ffffff;
+        border: 2px solid #000000;
+        padding: 10px 20px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .version {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 10px;
+    }
+
+    ul { margin: 0 0 14px 20px; padding: 0; }
+    li { margin: 4px 0; }
+
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 8px 10px; border-bottom: 1.5px solid #000000; vertical-align: top; }
+    td:first-child { font-weight: 700; width: 35%; }
+
+    .pie { margin-top: 32px; font-size: 14px; }
+</style>
+</body>
+</html>

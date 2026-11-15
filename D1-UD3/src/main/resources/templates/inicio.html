@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quizz UD3 · Inicio</title>
+    <style th:replace="~{fragmentos :: estilos}"></style>
+</head>
+<body>
+<main>
+    <h1>Quizz UD3: formulario encadenado</h1>
+    <p class="sub">Elige con qué mecanismo quieres guardar los datos entre pasos.</p>
+
+    <div class="card">
+        <h2>Versión con cookies</h2>
+        <p>Los datos viajan en cookies del navegador y no se guardan en el servidor.</p>
+        <a class="boton" th:href="@{/v3}">Abrir el quizz con cookies</a>
+    </div>
+
+    <div class="card">
+        <h2>Versión con HttpSession</h2>
+        <p>El servidor guarda los datos en la sesión y el navegador solo conserva el identificador.</p>
+        <a class="boton" th:href="@{/v1}">Abrir el quizz con HttpSession</a>
+    </div>
+
+</main>
+</body>
+</html>

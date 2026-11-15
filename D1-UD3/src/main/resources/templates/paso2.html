@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paso 2 · Género</title>
+    <style th:replace="~{fragmentos :: estilos}"></style>
+</head>
+<body>
+<main>
+    <p class="version" th:text="${version}">Versión</p>
+    <h1>Paso 2 · Género</h1>
+
+    <form method="post" th:action="${accion2}">
+        <div class="opciones">
+            <label>
+                <input type="radio" name="genero" value="hombre" th:checked="${datos['genero'] == 'hombre'}">
+                Hombre
+            </label>
+            <label>
+                <input type="radio" name="genero" value="mujer" th:checked="${datos['genero'] == 'mujer'}">
+                Mujer
+            </label>
+            <label>
+                <input type="radio" name="genero" value="otro" th:checked="${datos['genero'] == 'otro'}">
+                Prefiero no decirlo
+            </label>
+        </div>
+
+        <div class="error" th:if="${error != null}" th:text="${error}">Error</div>
+
+        <div class="acciones">
+            <button type="submit">Siguiente</button>
+            <a class="boton" th:href="${base + '/paso1'}">Atrás</a>
+            <a th:href="@{/}">Volver al inicio</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>
