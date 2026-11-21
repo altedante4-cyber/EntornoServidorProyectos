@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/pagina1">Pagina1</a></li>
+        <li><a href="/pagina2">Pagina2</a></li>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+    </ul>
+</nav>
+
+    <div th:if="${texto == 'inicio'}">
+        <h1 th:text="${titulo}"></h1>
+        <h3 th:text="${paginaactual}"></h3>
+    </div>
+<div th:if="${texto == 'pagina1'}">
+    <h1 th:text="${titulopagina1}"></h1>
+    <h3 th:text="${paginaactual}"></h3>
+</div>
+<div th:if="${texto == 'pagina2'}">
+    <h1 th:text="${titulopagina2}"></h1>
+    <h3 th:text="${paginaactua2}"></h3>
+</div>
+
+
+</body>
+</html>
