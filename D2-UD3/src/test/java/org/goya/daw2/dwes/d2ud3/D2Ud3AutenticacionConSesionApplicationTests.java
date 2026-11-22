@@ -1,4 +1,4 @@
-package org.example.d2ud3autenticacionconsesion;
+package org.goya.daw2.dwes.d2ud3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

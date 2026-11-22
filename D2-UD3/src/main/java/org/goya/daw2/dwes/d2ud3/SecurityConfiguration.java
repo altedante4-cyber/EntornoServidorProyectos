@@ -1,4 +1,4 @@
-package org.example.d2ud3autenticacionconsesion;
+package org.goya.daw2.dwes.d2ud3;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
